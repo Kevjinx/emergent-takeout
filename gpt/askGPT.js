@@ -11,9 +11,10 @@ const askGPT = async (prompt) => {
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: prompt,
-    max_tokens: 7,
+    max_tokens: 300,
     temperature: 0,
   });
+  console.log(response);
   return response.data.choices[0].text;
 };
 
